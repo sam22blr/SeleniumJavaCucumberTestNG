@@ -15,10 +15,15 @@ public class Common {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
-	
+		
 	public static WebElement visibilityOf(WebDriver driver, WebElement ele){
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		return wait.until(ExpectedConditions.visibilityOf(ele));
+	}
+	
+	public static Boolean invisibilityOf(WebDriver driver, WebElement ele){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		return wait.until(ExpectedConditions.invisibilityOf(ele));
 	}
 	
 	public static Boolean invisibilityOfElementLocated(WebDriver driver, By by){
@@ -35,4 +40,6 @@ public class Common {
 		String url = ConfigReader.getProperty("url");
 		driver.get(url);
 	}
+	
+	
 }
